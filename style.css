@@ -1,0 +1,504 @@
+/* ESTILOS PROFISSIONAIS - RODRIGO VALENTIM LUTA DE BRAÇO */
+:root {
+    --primary-color: #d90429;
+    --primary-hover: #ef233c;
+    --dark-bg: #0b0c10;
+    --card-bg: #1f2833;
+    --light-bg: #f4f6f8;
+    --text-dark: #1d2d44;
+    --text-light: #f8f9fa;
+    --gold: #ffb703;
+    --silver: #adb5bd;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.header {
+    background-color: var(--dark-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 20px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-btn {
+    background-color: var(--primary-color);
+    padding: 8px 18px;
+    border-radius: 4px;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-hover) !important;
+    color: #fff !important;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(11, 12, 16, 0.88), rgba(11, 12, 16, 0.92)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 110px 0 90px 0;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 30px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin-bottom: 35px;
+}
+
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.h-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.h-item strong {
+    color: var(--gold);
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: var(--dark-bg);
+}
+
+/* SECTIONS COMMON */
+.section {
+    padding: 80px 0;
+}
+
+.bg-alt {
+    background-color: var(--light-bg);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.role-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.role-tag {
+    color: var(--primary-color);
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.section-desc {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* BIOGRAFIA */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.bio-text .lead {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.bio-text p {
+    margin-bottom: 15px;
+}
+
+.bio-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+/* CARDS GRID (ATLETA / JUIZ) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(217, 4, 41, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* TÉCNICO */
+.coach-container {
+    background: var(--dark-bg);
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.coach-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.coach-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.coach-list li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.coach-list i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* JUIZ */
+.referee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* TABELA DE TÍTULOS */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.titles-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.titles-table th, .titles-table td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.titles-table th {
+    background-color: var(--dark-bg);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.titles-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.badge-gold {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #b0b0b0; 
+}
+
+.badge-silver {
+    background-color: #e2e3e5;
+    color: #383d41;
+    border: 1px solid #444444; 
+}
+
+.badge-bronze {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #b0b0b0; 
+}
+
+.badge-platinum {
+  background-color: #E5E4E2 !important;
+  color: #1a1a1a !important;
+  border: 1px solid #b0b0b0;
+}
+
+/* MÍDIA */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.media-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    display: block;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.media-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.media-card h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+}
+
+.media-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* CONTATO */
+.social-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn-social {
+    background-color: var(--dark-bg);
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+}
+
+.btn-social:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #050507;
+    color: #888;
+    padding: 25px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #222;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 868px) {
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .bio-grid, .referee-grid {
+        grid-template-columns: 1fr;
+    }
+}
