@@ -151,7 +151,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-        background: linear-gradient(rgba(11, 12, 16, 0.88), rgba(11, 12, 16, 0.92)), url('imagens/cinturao-e-medalhas.jpeg') top/40% no-repeat;
+        background: linear-gradient(rgba(11, 12, 16, 0.88), rgba(11, 12, 16, 0.92)), url('imagens/capa-cinturao-e-medalhas.jpeg') center/100% no-repeat;
     color: #fff;
     padding: 110px 0 90px 0;
     text-align: center;x
