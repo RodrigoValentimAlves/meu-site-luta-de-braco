@@ -95,6 +95,60 @@ body {
     color: #fff !important;
 }
 
+.language-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 62px;
+    min-height: 40px;
+    padding: 0 12px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.language-toggle:hover:not(:disabled) {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.language-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.language-toggle:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.google-translate-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+}
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
 /* HERO SECTION */
 .hero {
         background: linear-gradient(rgba(11, 12, 16, 0.88), rgba(11, 12, 16, 0.92)), url('imagens/cinturao-e-medalhas.jpeg') top/40% no-repeat;

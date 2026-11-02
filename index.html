@@ -33,6 +33,10 @@
                     <li><a href="#contato" class="nav-btn">Contato</a></li>
                 </ul>
             </nav>
+            <button class="language-toggle" type="button" aria-label="Mudar idioma para inglês" title="Mudar idioma para inglês" translate="no">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <span>PT</span>
+            </button>
         </div>
     </header>
 
@@ -794,6 +798,12 @@
             <p class="text-center mb-4">Confira algumas das participações em jornais, transmissões e podcasts:</p>
 
             <div class="media-grid">
+                <a href="https://cerquilho.sp.leg.br/noticia/visualizar/idVereador/1150/id/1510/?34a-sessao-ordinaria-da-camara-de-cerquilho-destaca-votacoes-e-homenagem-a-atleta-cerquilhense.html"
+                   target="_blank" class="media-card">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <h4>Moção Câmara Municipal de Cerquilho</h4>
+                    <p>Moção recebida sobre a conquista do título Top Arm Brasil</p>
+                </a>
                 <a href="https://www.youtube.com/watch?v=PLi7pPiovak" target="_blank" class="media-card">
                     <i class="fa-brands fa-youtube"></i>
                     <h4>Arm Show Podcast</h4>
@@ -857,12 +867,6 @@
                     <i class="fa-brands fa-youtube"></i>
                     <h4>Top Arm Brasil 2025</h4>
                     <p>Luta conta Marcelo</p>
-                </a>
-                <a href="https://cerquilho.sp.leg.br/noticia/visualizar/idVereador/1150/id/1510/?34a-sessao-ordinaria-da-camara-de-cerquilho-destaca-votacoes-e-homenagem-a-atleta-cerquilhense.html"
-                   target="_blank" class="media-card">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <h4>Moção Câmara Municipal de Cerquilho</h4>
-                    <p>Moção recebida sobre a conquista do título Top Arm Brasil</p>
                 </a>
             </div>
         </div>
@@ -928,6 +932,72 @@
             window.addEventListener("resize", atualizarGaleria);
             atualizarGaleria();
         });
+    </script>
+    <div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
+    <script>
+        const languageToggle = document.querySelector(".language-toggle");
+        let selectedLanguage = "pt";
+        let translateObserver;
+
+        function updateLanguageToggle() {
+            const languageLabel = languageToggle.querySelector("span");
+            const nextLanguage = selectedLanguage === "pt" ? "inglês" : "Portuguese";
+
+            languageLabel.textContent = selectedLanguage.toUpperCase();
+            const label = selectedLanguage === "pt"
+                ? `Mudar idioma para ${nextLanguage}`
+                : `Switch language to ${nextLanguage}`;
+            languageToggle.setAttribute("aria-label", label);
+            languageToggle.title = label;
+            document.documentElement.lang = selectedLanguage === "pt" ? "pt-BR" : "en";
+        }
+
+        function applySelectedLanguage() {
+            const languageSelect = document.querySelector(".goog-te-combo");
+            if (!languageSelect) return false;
+
+            languageSelect.value = selectedLanguage === "en" ? "en" : "";
+            languageSelect.dispatchEvent(new Event("change", { bubbles: true }));
+            return true;
+        }
+
+        window.googleTranslateElementInit = function () {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: "pt",
+                    includedLanguages: "en",
+                    autoDisplay: false
+                },
+                "google_translate_element"
+            );
+
+            translateObserver = new MutationObserver(() => {
+                if (applySelectedLanguage()) translateObserver.disconnect();
+            });
+            translateObserver.observe(document.getElementById("google_translate_element"), {
+                childList: true,
+                subtree: true
+            });
+            if (applySelectedLanguage()) translateObserver.disconnect();
+        };
+
+        languageToggle.addEventListener("click", () => {
+            selectedLanguage = selectedLanguage === "pt" ? "en" : "pt";
+            updateLanguageToggle();
+            applySelectedLanguage();
+        });
+
+        const translateScript = document.createElement("script");
+        translateScript.src =
+            "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        translateScript.async = true;
+        translateScript.onerror = () => {
+            languageToggle.disabled = true;
+            languageToggle.title = "A tradução não pôde ser carregada. Verifique sua conexão.";
+            languageToggle.setAttribute("aria-label", languageToggle.title);
+        };
+        document.body.appendChild(translateScript);
+        updateLanguageToggle();
     </script>
 </body>
 
